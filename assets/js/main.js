@@ -90,4 +90,18 @@ console.log(usuariosActivos)
 console.log(usuariosInactivos)
 console.log(usuarios)
 
-// .find() ⭐ -> 
+// .find() ⭐ -> Devuelve el PRIMER elemento que coincida con una condición
+
+const firstActive = usuarios.find(usuario => usuario.isActive)
+
+console.log(firstActive)
+
+// findIndex() -> devuelve la posición de la primera coincidencia que encuentre
+
+const indexFirstFalse = usuarios.findIndex(usuario => !usuario.isActive)
+
+console.log(indexFirstFalse)
+
+// indexOf() -> Devuelve la posición de un valor especifico
+const indexUva = frutas.indexOf('uvas')
+console.log(indexUva)
