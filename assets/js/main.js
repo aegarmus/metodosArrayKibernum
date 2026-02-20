@@ -143,3 +143,81 @@ const totalCompra = compras.reduce((acumulador, compra) => {
 }, 0)
 
 console.log(totalCompra)
+
+// slice() -> Copiar una parte del arreglo original devolviendo la copia en un nuevo arreglo
+// Muy útil para hacer paginación
+
+const letras = ['A', 'B', 'C', 'D', 'E', 'F']
+
+const paginaLetra = letras.slice(1, 4)
+
+console.log(paginaLetra)
+
+// .concar() -> Unir dos arrays en un nuevo arreglo
+
+const frontend = ['react', 'angular', 'vue']
+const backend = ['express', 'nest', 'psql']
+
+const fullstack = frontend.concat(backend)
+
+console.log(fullstack)
+
+// .includes() -> verifica la existencia de un dato o algún patrón dentro del arreglo. Siempre devuelve un booleano
+
+const permisos = ['admin', 'lector', 'editor', 'superadmin']
+
+if(permisos.includes('admin')) {
+    console.log('Permisos de administrador concedidos')
+}
+
+// .some() -> Verifica que al menos un dato dentro del string cumple una condición. Devuelve un booleano
+
+const calificaciones = [7.0, 6.5, 4.0, 3.5, 2.5, 2.6, 5.5]
+
+const existeReprobado = calificaciones.some(nota => nota < 4.0)
+
+console.log(existeReprobado)
+
+// .every() -> Verifica que todos los elementos de un Array cumplan una condición -> devuelve un booleano
+
+const edades = [17, 22, 25, 32, 45]
+
+const todosSonAdultos = edades.every(edad => edad >= 18)
+
+console.log(todosSonAdultos)
+
+// join() => convierte un array de string en un único string
+
+const palabras = ['hola', 'como', 'están', '?']
+
+const saludo = palabras.join(' ')
+
+console.log(saludo)
+
+// forEach() ⭐ -> ejecuta una función sobre cada elemento del arreglo. Sin embargo!
+            //      a DIFERENCIA DE MAP NO RETORNA NADA, solo ejecuta la función pero no devuelve valores
+
+
+const productos2 = [ 'teclado', 'notebook', 'mouse',];
+
+productos2.forEach(producto => {
+    producto = 'unicornio'
+    console.log(producto)
+})
+
+// Muy útil para renderizar en pantalla de forma dinámica
+
+
+// .toSorted() ⭐ => Que hace lo mismo que sort, peeero: devuelve un array nuevo, sin alterar el original
+
+const productosOrdenados = productos2.toSorted()
+
+console.log(productos2)
+console.log(productosOrdenados)
+
+// toReversed() => hace lo mismo que reverse, pero, devuelve un array nuevo sin alterar el original
+
+const productosReverse = productos2.toReversed()
+
+console.log(productos2)
+console.log(productosReverse)
