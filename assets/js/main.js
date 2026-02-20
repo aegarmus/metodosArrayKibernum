@@ -127,3 +127,19 @@ const preciosConIVA = precios.map((precio) => {
 console.log(preciosConIVA)
 console.log(precios)
 
+// reduce() ⭐👾 -> Reduce todos los valores del arreglo a un único valor
+
+const compras = [
+    { producto: 'notebook', precio: 800000 },
+    { producto: 'teclado', precio: 79990 },
+    { producto: 'RAM 16gb', precio: 160000 },
+    { producto: 'mouse', precio: 40000 }
+]
+
+const totalCompra = compras.reduce((acumulador, compra) => {
+    // El acumulador almacena el valor total de cada iteración
+    console.log('Acumulador Reduce', acumulador)
+    return acumulador + compra.precio
+}, 0)
+
+console.log(totalCompra)
