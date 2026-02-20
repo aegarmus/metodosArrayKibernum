@@ -105,3 +105,25 @@ console.log(indexFirstFalse)
 // indexOf() -> Devuelve la posición de un valor especifico
 const indexUva = frutas.indexOf('uvas')
 console.log(indexUva)
+
+//map() 🌟 -> Transforma los elementos de un arreglo y los devuelve en un nuevo arreglo
+
+const precios = [1000, 2000, 3000, 4000]
+
+const formatCurrency = (numero) => {
+    return new Intl.NumberFormat('es-CL', {
+        currency: 'CLP',
+        style: 'currency'
+
+    }).format(numero)
+}
+
+const preciosConIVA = precios.map((precio) => {
+    const precioIVA = precio * 1.19
+    const precioFormateado = formatCurrency(precioIVA)
+    return precioFormateado
+})
+
+console.log(preciosConIVA)
+console.log(precios)
+
